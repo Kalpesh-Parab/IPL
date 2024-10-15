@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import plotly.express as px
+import plotly as px
 
 # Load the pre-trained model
 pipe = pickle.load(open('pipe.pkl', 'rb'))
