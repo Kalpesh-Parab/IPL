@@ -1,7 +1,6 @@
 import streamlit as st
 import pickle
 import pandas as pd
-import plotly as px
 
 # Load the pre-trained model
 pipe = pickle.load(open('pipe.pkl', 'rb'))
@@ -104,14 +103,6 @@ else:
         st.write(f"**Current Run Rate (CRR)**: {crr:.2f}")
         st.write(f"**Required Run Rate (RRR)**: {rrr:.2f}")
 
-        # Visualize probabilities
-        fig = px.bar(
-            x=[f"{batting_team} Win", f"{bowling_team} Loss"],
-            y=[win_probability, loss_probability],
-            labels={'y': 'Probability'},
-            title='Match Outcome Probabilities'
-        )
-        st.plotly_chart(fig)
 
         # Save user inputs to session state
         user_inputs = {
